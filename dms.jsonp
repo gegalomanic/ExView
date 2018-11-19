@@ -39,7 +39,7 @@
 		}
 	}catch(e){}
 
-	var isnight=(new Date).getHours()<6;
+	var isnight=(new Date).getHours()<6||(new Date).getHours()>=21;
 
 //\u521d\u59cb\u5316\u8bbe\u7f6e
 if(isios()){
