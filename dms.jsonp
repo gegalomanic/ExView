@@ -249,7 +249,7 @@ LoadDMS('\u3010\u6700\u65b0\u7248\u672c\u3011<a href="javascript:void(0);" oncli
 
 +((getvipdisp())?('<div id="thankspanel" style="padding-top:16px;display:flex;flex-wrap:wrap;justify-content:center;" '+(typeof(getnowtheme)=="function"?('class="color-'+getnowtheme()+'"'):'')+'><style>#thankspanel .chip:not(.active){width:32px;}</style><div style="margin:-3px -3px 10px -3px;width:100%;text-align:center;border-bottom:1px solid;">\u2605\u7279\u522b\u9e23\u8c22\u2605</div>'
 
-+(thanksjson.filter(function(user){return user.title!='SVIP'&&user.title!='SSVIP'&&user.title!='VIP';}).map(function(user,i){return getthanksuser(user,i);}).join(""))
++(thanksjson.filter(function(user){return (user.title!='SVIP'&&user.title!='SSVIP'&&user.title!='VIP')||(parseInt(user.qq)==parseInt(localStorage.ExView_LoginUser));}).map(function(user,i){return getthanksuser(user,i);}).join(""))
 
 +'<div onclick="this.remove()" style="width:100%;background-image:-webkit-linear-gradient(bottom, white, transparent);text-align: center;height: 80px;line-height: 125px;margin-top: -70px;">\u70b9\u51fb\u52a0\u8f7d\u66f4\u591a<style>#thankspanel:not(.showall) .chip:nth-child(n+100){display:none;}</style></div>'):'')
 
