@@ -2,7 +2,7 @@
     window.isios=window.isios||function(){
         return false;
     }	
-    var isnight=(new Date()).getHours()<=6||(new Date()).getHours()>=20||(new Date()).getDay()==6||(new Date()).getDay()==7;
+    var isnight=(new Date()).getHours()<6||(new Date()).getHours()>=21;
     // var isnight=true;
 
     var host="https://raw.githubusercontent.com/ghostgzt/ExView/master/";
