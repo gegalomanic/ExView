@@ -67,7 +67,7 @@ if(!isdesktop()){
 		var nowversion=ExView.version;
 		var newestversion="2.5.7_beta6";
 		var newestversioninfo="2018.11.25 2.5.7_beta6<br>1.\u4fee\u590d\u4e00\u4e9b\u8bf7\u6c42\u4e71\u7801\u95ee\u9898<br>2.\u65b0\u589e \u9b54\u6cd5\u8ba2\u9605\u76ee\u5f55 \u529f\u80fd<br>3.\u4f18\u5316\u5b89\u5353\u7248\u767b\u5f55\u529f\u80fd<br>4.\u4fee\u590d\u89c6\u9891\u5f39\u5e55\u53d1\u9001<br>5.\u89c6\u9891\u622a\u56fe\u529f\u80fd<br>6.\u4e8c\u7ef4\u7801\u5206\u4eab\u529f\u80fd<br>7.\u89e3\u51b3MIUI\u65e0\u6cd5\u8c03\u7528\u7b2c\u4e09\u65b9\u5e94\u7528\u6253\u5f00\u7684\u95ee\u9898<br>\u89e3\u51b3\u9996\u9875\u63a8\u8350\u4e71\u8df3\u95ee\u9898";
-		var updatepath=(iscrosswalk()?'https://raw.githubusercontent.com/ghostgzt/ExView/master/platforms/android/ExViewPlus-separate-release-lastest.apk':'https://raw.githubusercontent.com/ghostgzt/ExView/master/platforms/android/ExView-release-lastest.apk')+('?_='+(new Date()).getTime());
+		var updatepath=(iscrosswalk()?'https://raw.githubusercontent.com/ghostgzt/ExView/master/platforms/android/ExViewPlus-separate-release-lastest.apk':'https://raw.githubusercontent.com/ghostgzt/ExView/master/platforms/android/ExView-release-lastest.apk')/* +('?_='+(new Date()).getTime()) */;
 		var feedbackpath="http://wpa.qq.com/msgrd?v=3&uin=1275731466&site=qq&menu=yes";		
 	}
 }else if(isdesktopmac()){
