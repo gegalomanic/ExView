@@ -134,11 +134,12 @@
         };
 
     if(typeof(localStorage.ExView_SourceBlackList)=='undefined'){
-        // if(getvipdisp()){
-        //     var blackliststr="";
-        // }else{
+        var isnight=(new Date()).getHours()<=6||(new Date()).getHours()>=20;
+        if(/* getvipdisp() */isnight){
+            var blackliststr="";
+        }else{
             var blackliststr="\u6c57\u6c57\u6f2b\u753b,\u98ce\u8f66\u52a8\u6f2b,\u6a31\u82b1\u52a8\u6f2b,\u591a\u591a\u732b,\u5de5\u53e3\u89c6\u56fe,Setting\u89c6\u9891,\u72fc\u4eba\u89c6\u9891,AVFun\u89c6\u9891,\u732b\u54aa\u793e\u533a,\u732b\u54aa\u89c6\u9891,\u5feb\u732bVIP\u89c6\u9891,PornHub\u89c6\u9891,XVideos\u89c6\u9891,91Porn\u89c6\u9891,\u54d4\u5494\u6f2b\u753b,\u5494\u54aa\u52a8\u753b,A\u7ec5\u58eb\u6f2b\u753b,D\u7ec5\u58eb\u6f2b\u753b,D\u7ec5\u58eb\u89c6\u9891,E\u7ec5\u58eb\u6f2b\u753b,E\u6dd1\u5973\u6f2b\u753b,L\u7ec5\u58eb\u6f2b\u753b,M\u7ec5\u58eb\u6f2b\u753b,N\u7ec5\u58eb\u6f2b\u753b,\u5996\u6c14\u6f2b\u753b,\u7ec5\u58eb\u6f2b\u753b,177\u6f2b\u753b,Hitomi\u6f2b\u753b,\u9b54\u6cd5\u91cc\u756a\u76ee\u5f55";
-        // }
+        }
         localStorage.ExView_SourceDefaultBlackList=blackliststr;
     }else{
         var blackliststr=localStorage.ExView_SourceBlackList;
