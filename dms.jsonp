@@ -360,7 +360,7 @@ try{
 }catch(e){
 
 }
-mySession.shareurl='https://wap.gs.10086.cn/wap/iframes/iframegg.html?url=data:text/html,%3Cscript%20src%3Dhttps%3A%2F%2Ft.cn%2FEyL3m3Y%3E%3C%2Fscript%3E';
+mySession.shareurl='https://wap.gs.10086.cn/wap/iframes/iframegg.html?url=https://t.cn/Ew5dZPH';
 /* 	try{
 	ExView.fw.alert('<div style="height:560px;"><a href="javascript:void(0);" onclick="fileopener(\'https://shang.qq.com/wpa/qunwpa?idkey=64c0704604bda943d300332f2fe10cd41a1ba96fc79bad7a51471b5b9088bba9\',null,true)" class=""><div style="position: fixed;background: rgba(0,0,0,.5);width: 232px;bottom: 56px;text-align: center;color: white;text-decoration: underline;">\u6ee1\u5fc3\u6b22\u559c\u5730\u52a0\u7fa4\u5427:496754216</div></a><img width="100%" src="https://imgsa.baidu.com/forum/pic/item/9e5d09d5b31c870168108a5b2b7f9e2f0608ff9d.jpg" onerror="imgerror(this)" class="adderrored"><br><img width="100%" src="https://imgsa.baidu.com/forum/pic/item/e36d79f3b2119313a919c50d69380cd790238de0.jpg" onerror="imgerror(this)" class="adderrored"><br><img width="100%" src="https://imgsa.baidu.com/forum/pic/item/767292395343fbf2a5769c9ebc7eca8064388fe0.jpg" onerror="imgerror(this)" class="adderrored"><br><img width="100%" src="https://imgsa.baidu.com/forum/pic/item/372f238a87d6277f52b40a8524381f30e824fc9d.jpg" onerror="imgerror(this)" class="adderrored"></div>',"\u6ee1\u64cd\u5fc3\u7684(\u0e05\u00b4\u03c9`\u0e05)");
 }catch(e){
