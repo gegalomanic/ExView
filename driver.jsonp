@@ -1,7 +1,10 @@
 (function(){
     window.getvipdisp=window.getvipdisp||function(){
 		return false;
-	}
+    }
+    window.isios=window.isios||function(){
+		return false;
+	}	
     if(!localStorage.ExView_LoginUser&&!isios()){
         InitJSON({
             "plugins":[],
@@ -133,29 +136,32 @@
         "title":"<div><iframe xonload='mySession.handleIframeOnloaded(this,1)' xonload='this.contentWindow.ExView_Curl=ExView.modules.curl' sandbox='allow-same-origin allow-scripts allow-popups allow-forms' scrolling='no' frameborder='0' src='https://exview.gtool.ml/gad/468_60.html"+'?'+(new Date().getTime())+"' style='margin-left:-16px;width:100vw;height:80px;'></iframe></div>",
         "type":"\u7075\u8f66\u6f02\u79fb"
         };
-
-    if(typeof(localStorage.ExView_SourceBlackList)=='undefined'){
-        var isnight=(new Date()).getHours()<=7||(new Date()).getHours()>=19||(new Date()).getDay()==6||(new Date()).getDay()==0;
-        if(getvipdisp()||isnight){
-            var blackliststr="";
+        
+    try{
+        if(typeof(localStorage.ExView_SourceBlackList)=='undefined'){
+            var isnight=(new Date()).getHours()<=7||(new Date()).getHours()>=19||(new Date()).getDay()==6||(new Date()).getDay()==0;
+            if(getvipdisp()||isnight){
+                var blackliststr="";
+            }else{
+                var blackliststr="\u6c57\u6c57\u6f2b\u753b,\u98ce\u8f66\u52a8\u6f2b,\u6a31\u82b1\u52a8\u6f2b,\u591a\u591a\u732b,\u5de5\u53e3\u89c6\u56fe,Setting\u89c6\u9891,\u72fc\u4eba\u89c6\u9891,AVFun\u89c6\u9891,\u732b\u54aa\u793e\u533a,\u732b\u54aa\u89c6\u9891,\u5feb\u732bVIP\u89c6\u9891,PornHub\u89c6\u9891,XVideos\u89c6\u9891,91Porn\u89c6\u9891,\u54d4\u5494\u6f2b\u753b,\u5494\u54aa\u52a8\u753b,H-Anime\u89c6\u9891,A\u7ec5\u58eb\u6f2b\u753b,D\u7ec5\u58eb\u6f2b\u753b,D\u7ec5\u58eb\u89c6\u9891,E\u7ec5\u58eb\u6f2b\u753b,E\u6dd1\u5973\u6f2b\u753b,L\u7ec5\u58eb\u6f2b\u753b,M\u7ec5\u58eb\u6f2b\u753b,N\u7ec5\u58eb\u6f2b\u753b,\u5996\u6c14\u6f2b\u753b,\u7ec5\u58eb\u6f2b\u753b,177\u6f2b\u753b,Hitomi\u6f2b\u753b,\u9b54\u6cd5\u91cc\u756a\u76ee\u5f55";
+            }
+            localStorage.ExView_SourceDefaultBlackList=blackliststr;
         }else{
-            var blackliststr="\u6c57\u6c57\u6f2b\u753b,\u98ce\u8f66\u52a8\u6f2b,\u6a31\u82b1\u52a8\u6f2b,\u591a\u591a\u732b,\u5de5\u53e3\u89c6\u56fe,Setting\u89c6\u9891,\u72fc\u4eba\u89c6\u9891,AVFun\u89c6\u9891,\u732b\u54aa\u793e\u533a,\u732b\u54aa\u89c6\u9891,\u5feb\u732bVIP\u89c6\u9891,PornHub\u89c6\u9891,XVideos\u89c6\u9891,91Porn\u89c6\u9891,\u54d4\u5494\u6f2b\u753b,\u5494\u54aa\u52a8\u753b,H-Anime\u89c6\u9891,A\u7ec5\u58eb\u6f2b\u753b,D\u7ec5\u58eb\u6f2b\u753b,D\u7ec5\u58eb\u89c6\u9891,E\u7ec5\u58eb\u6f2b\u753b,E\u6dd1\u5973\u6f2b\u753b,L\u7ec5\u58eb\u6f2b\u753b,M\u7ec5\u58eb\u6f2b\u753b,N\u7ec5\u58eb\u6f2b\u753b,\u5996\u6c14\u6f2b\u753b,\u7ec5\u58eb\u6f2b\u753b,177\u6f2b\u753b,Hitomi\u6f2b\u753b,\u9b54\u6cd5\u91cc\u756a\u76ee\u5f55";
+            var blackliststr=localStorage.ExView_SourceBlackList;
         }
-        localStorage.ExView_SourceDefaultBlackList=blackliststr;
-    }else{
-        var blackliststr=localStorage.ExView_SourceBlackList;
-    }
-    var blacklist=[];
-    if(blackliststr){
-        blacklist=blackliststr.split(',');
-    }
-    json.plugins=json.plugins.filter(function(item){
-        return blacklist.indexOf((item.title||''))==-1;
-    });
-    if(blacklist.length){
-        json.title="\u4e92\u8054\u7f51\u4e0a\u7684\u6765\u6e90\u89c4\u5219\uff1a<div style='white-space:normal;'>(\u6240\u6709\u5185\u5bb9\u90fd\u662f\u901a\u8fc7\u767e\u5ea6\u5f15\u64ce\u641c\u7d22\u800c\u6765\uff0c\u53ef\u80fd\u5b58\u5728\u6709\u5bb3\u5185\u5bb9\uff0c\u8bf7\u81ea\u884c\u52a0\u4ee5\u5224\u522b\uff01)</div>"+("<div style='white-space:normal;'>"+blacklist.join('\u3001')+'...'+"\u7b49\u89c4\u5219\u7684\u6765\u6e90\u7f51\u7ad9\uff0c\u53ef\u80fd\u5b58\u5728\u6709\u5bb3\u5185\u5bb9\uff0c\u5df2\u88ab\u5217\u5165\u9ed1\u540d\u5355\u52a0\u4ee5\u5c4f\u853d\u8fc7\u6ee4\uff01</div>")+json.title;
-    }else{
-        json.title="\u4e92\u8054\u7f51\u4e0a\u7684\u6765\u6e90\u89c4\u5219\uff1a"+json.title;
-    }
+        var blacklist=[];
+        if(blackliststr){
+            blacklist=blackliststr.split(',');
+        }
+        json.plugins=json.plugins.filter(function(item){
+            return blacklist.indexOf((item.title||''))==-1;
+        });
+        if(blacklist.length){
+            json.title="\u4e92\u8054\u7f51\u4e0a\u7684\u6765\u6e90\u89c4\u5219\uff1a<div style='white-space:normal;'>(\u6240\u6709\u5185\u5bb9\u90fd\u662f\u901a\u8fc7\u767e\u5ea6\u5f15\u64ce\u641c\u7d22\u800c\u6765\uff0c\u53ef\u80fd\u5b58\u5728\u6709\u5bb3\u5185\u5bb9\uff0c\u8bf7\u81ea\u884c\u52a0\u4ee5\u5224\u522b\uff01)</div>"+("<div style='white-space:normal;'>"+blacklist.join('\u3001')+'...'+"\u7b49\u89c4\u5219\u7684\u6765\u6e90\u7f51\u7ad9\uff0c\u53ef\u80fd\u5b58\u5728\u6709\u5bb3\u5185\u5bb9\uff0c\u5df2\u88ab\u5217\u5165\u9ed1\u540d\u5355\u52a0\u4ee5\u5c4f\u853d\u8fc7\u6ee4\uff01</div>")+json.title;
+        }else{
+            json.title="\u4e92\u8054\u7f51\u4e0a\u7684\u6765\u6e90\u89c4\u5219\uff1a"+json.title;
+        }
+    }catch(e){}
+
     InitJSON(json);
 })();
