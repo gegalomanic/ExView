@@ -154,10 +154,14 @@ thanksjson=thanksjson.map(function(item){//qq\u53f710\u4f4d\u8865\u5168
 });	
 if(refs>0){
 	if(!isvip){
+		var refqq=user||'';
+		if(refqq.length&&refqq.length<10){
+			refqq=('0000000000'+refqq).substr(-10);
+		}
 		if(refs>=5&&refs<10){
-			vipinfo.push({"name":"ExView\u63a8\u5e7f\u8005 - "+user,"title":"VIP","qq":""+user});
+			vipinfo.push({"name":"ExView\u63a8\u5e7f\u8005 - "+user,"title":"VIP","qq":refqq});
 		}else if(refs>=10){
-			vipinfo.push({"name":"ExView\u63a8\u5e7f\u8005 - "+user,"title":'\u8363\u8a89SSVIP'+(refs>10?(refs-9):''),"qq":""+user});
+			vipinfo.push({"name":"ExView\u63a8\u5e7f\u8005 - "+user,"title":'\u8363\u8a89SSVIP'+(refs>10?(refs-9):''),"qq":refqq});
 		}		
 	}else{
 		vipinfo=vipinfo.map(function(item){
