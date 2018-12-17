@@ -137,15 +137,16 @@ thanksjson=thanksjson.map(function(item){//qq\u53f710\u4f4d\u8865\u5168
 		if(parseInt(user)==parseInt(item.ref)){
 			refs++;
 		}
-		if(item.id){
-			if((item.id||'').toLocaleLowerCase()==(getuid()||'').toLocaleLowerCase()){
-				vipinfo.push(item);
-				isvip=1;
-			}
-		}else
 		if(parseInt(user)==parseInt(item.qq)){
-			vipinfo.push(item);
-			isvip=1;
+			if(item.id){
+				if((item.id||'').toLocaleLowerCase()==(getuid()||'').toLocaleLowerCase()){
+					vipinfo.push(item);
+					isvip=1;
+				}
+			}else{
+				vipinfo.push(item);
+				isvip=1;				
+			}
 		}
 	}else{
 		vipinfo.push(item);
