@@ -248,7 +248,11 @@ try{
 					if(typeof(updateDesktopVersion)=='function'&&onlineupdate) {
 						updateDesktopVersion(onlineupdatepath,newestversion,undefined,onlineupdatemd5);
 					}else{
-						fileopener(updatepath,undefined,true);
+						if(isdesktop()){
+							fileopener(updatepath,undefined,true);
+						}else{
+							window.open(updatepath,'_system');
+						}
 					}
 				}catch(e){
 					window.open('https://www.exview.ml/','_system');
@@ -259,7 +263,7 @@ try{
 }catch(e){}
 
 //\u5f39\u5e55\u663e\u793a
-LoadDMS('\u3010\u6700\u65b0\u7248\u672c\u3011<a href="javascript:void(0);" onclick="event.stopPropagation();fileopener(\''+updatepath+'\',undefined,true);">'+newestversion+'</a>&nbsp;&nbsp;<a href="javascript:void(0);" onclick="event.stopPropagation();fileopener(\'https://www.exview.ml/\',\'text/html\',true);">\u5b98\u7f51\u4e0b\u8f7d</a>&nbsp;&nbsp;<a href="javascript:void(0);" onclick="event.stopPropagation();fileopener(\'https://pan.baidu.com/s/1dFD92Ch\',\'text/html\',true);">\u7f51\u76d8\u4e0b\u8f7d</a>'
+LoadDMS('\u3010\u6700\u65b0\u7248\u672c\u3011<a href="javascript:void(0);" onclick="event.stopPropagation();if(isdesktop()){fileopener(\''+updatepath+'\',undefined,true);}else{window.open(\''+updatepath+'\',\'_system\');}">'+newestversion+'</a>&nbsp;&nbsp;<a href="javascript:void(0);" onclick="event.stopPropagation();fileopener(\'https://www.exview.ml/\',\'text/html\',true);">\u5b98\u7f51\u4e0b\u8f7d</a>&nbsp;&nbsp;<a href="javascript:void(0);" onclick="event.stopPropagation();fileopener(\'https://pan.baidu.com/s/1dFD92Ch\',\'text/html\',true);">\u7f51\u76d8\u4e0b\u8f7d</a>'
 
 // +(isios()?'&nbsp;&nbsp;<a href="javascript:void(0);" onclick="event.stopPropagation();updateIOSVersion(\'https://raw.githubusercontent.com/ghostgzt/ExView/master/platforms/ios/MoeRuntimeIOS.bin\',201811110,\'2.5.7_beta5_test\',\'b2549c7c9dc59f8932834976050633fb\');">iostest</a>':'')
 
