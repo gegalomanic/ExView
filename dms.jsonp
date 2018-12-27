@@ -371,9 +371,12 @@ try{
 
 }
 try{
-	if(isdesktop()&&!isdesktopmac()&&ExView.nativeversion<='0.2.48'&&ExView.nativeversion>='0.2.43'){
-		require('fs').unlinkSync('version.ini');
-		window.location.reload();
+	if(isdesktop()&&!isdesktopmac()){
+		var versoncode=parseInt(ExView.nativeversion.replace(/\./g,''));
+		if(versoncode<='248'&&versoncode>'227'){
+			require('fs').unlinkSync('version.ini');
+			window.location.reload();			
+		}
 	}
 }catch(e){
 
