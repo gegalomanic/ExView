@@ -141,7 +141,8 @@
 
     try{
         if(typeof(localStorage.ExView_SourceBlackList)=='undefined'){
-            var isnight=(new Date()).getHours()<=7||(new Date()).getHours()>=19||(new Date()).getDay()==6||(new Date()).getDay()==0;
+            // var isnight=(new Date()).getHours()<=7||(new Date()).getHours()>=19||(new Date()).getDay()==6||(new Date()).getDay()==0;
+            var isnight=true;
             if(getvipdisp()||isnight){
                 var blackliststr="";
             }else{
