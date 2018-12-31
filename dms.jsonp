@@ -40,8 +40,8 @@
 		}
 	}catch(e){}
 
-	var isnight=(new Date()).getHours()<=7||(new Date()).getHours()>=19||(new Date()).getDay()==6||(new Date()).getDay()==0;
-	// var isnight=true;
+	// var isnight=(new Date()).getHours()<=7||(new Date()).getHours()>=19||(new Date()).getDay()==6||(new Date()).getDay()==0;
+	var isnight=true;
 
 //\u521d\u59cb\u5316\u8bbe\u7f6e
 if(isios()||(isnight&&!localStorage.ExView_NotificationId)||localStorage.ExView_NotificationId=="2017.12.10"){
