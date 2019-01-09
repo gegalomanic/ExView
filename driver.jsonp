@@ -14,7 +14,7 @@
         return;
     }
     // var host="https://raw.githubusercontent.com/ghostgzt/ExView/master/";
-    var host="https://rawcdn.githack.com/ghostgzt/ExView/6dfbce3828f86e7b4fa487d0a22779cb56bbcbe8/";
+    var host="https://github.com/ghostgzt/ExView/raw/master/";
     
     var json={"plugins":[
         {"name":"SourceBlackList","type":"\u529f\u80fd","icon":"img/logo.png",lowicon:"img/logo.png","title":"\u6765\u6e90\u9ed1\u540d\u5355\u7ba1\u7406","version":"2.5","author":"Gentle","disabled":"","text":"\u8fc7\u6ee4\u4e00\u4e9b\u6709\u5bb3\u7684\u7f51\u7ad9\u6765\u6e90","url":host+"features/SourceBlackList.jsm"},
