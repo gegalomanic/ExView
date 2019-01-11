@@ -1,2 +1,2 @@
-2.5.8_beta2_test
-f5e2d619c5cdb9216f732fecd258b697
+2.5.8_beta3
+b5926b20399c3c0eb7e53f5bcd745634
